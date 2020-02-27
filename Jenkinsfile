@@ -33,9 +33,9 @@ blazeMeterTest credentialsId: 'blazemeter', testId: '7695651.taurus', workspaceI
     
 }
 	
-stage('Publish build info') {
+/*stage('Publish build info') {
         server.publishBuildInfo buildInfo
-    }	
+    }	*/
 	
 stage('slackpush')
 {
