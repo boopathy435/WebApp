@@ -30,10 +30,13 @@ node {
 stage('functiontest')
 {
 blazeMeterTest credentialsId: 'blazemeter', testId: '7695651.taurus', workspaceId: '431777'
-    stage('Publish build info') {
-        server.publishBuildInfo buildInfo
-    }
+    
 }
+	
+stage('Publish build info') {
+        server.publishBuildInfo buildInfo
+    }	
+	
 stage('slackpush')
 {
 slackSend channel: '#cloud', message: 'Build Started - ${env.JOB_NAME} ${env.BUILD_NUMBER} (<${env.BUILD_URL}|Open>)'
