@@ -42,7 +42,7 @@ stage('slackpush')
 slackSend channel: '#cloud', message: 'Build Started - ${env.JOB_NAME} ${env.BUILD_NUMBER} (<${env.BUILD_URL}|Open>)'
 }
     stage('deploy to tomcat'){
-        deploy adapters: [tomcat7(credentialsId: 'tomcat-tharun', path: '', url: 'http://34.93.27.202:8080/')], contextPath: '/QAWebapp', onFailure: false, war: '**/*.war'
+        deploy adapters: [tomcat7(credentialsId: 'admin', path: '', url: 'http://34.69.148.38:8080/')], contextPath: '/QAWebapp', onFailure: false, war: '**/*.war'
     
     }
 	stage('docker build/push') {
